@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "da25471d-952d-487a-959e-90eb519fc6ea",
+		"name": "Evaluation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40324338"
+	},
+	"item": [
+		{
+			"name": "List of user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{b_url}}api/users?page=2",
+					"host": [
+						"{{b_url}}api"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "reqres-free-v1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"leader\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{b_url}}api/users",
+					"host": [
+						"{{b_url}}api"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "reqres-free-v1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Brajmohan\",\r\n    \"job\": \"zion resident\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{b_url}}api/users/2",
+					"host": [
+						"{{b_url}}api"
+					],
+					"path": [
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "reqres-free-v1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Brajmohan\",\r\n    \"job\": \"zion resident\"\r\n}"
+				},
+				"url": {
+					"raw": "{{b_url}}api/users/2",
+					"host": [
+						"{{b_url}}api"
+					],
+					"path": [
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
