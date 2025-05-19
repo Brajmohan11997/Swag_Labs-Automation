@@ -20,7 +20,7 @@ public class DataProvider {
 
     }
 
-//    @DataProvider(name = "getTestData")
+    @org.testng.annotations.DataProvider
     public Object[][] getTestData(){
         Object[][] data = new Object[2][2];
         data[0][0]= "standard_user";
